@@ -1,0 +1,52 @@
+<!-- Wrapper-->
+<div id="wrapper" class="nextip">
+
+    <!-- Navigation -->
+    <div ng-include="'app/components/common/navigation.html'"></div>
+
+    <!-- Page wraper -->
+    <!-- ng-class with current state name give you the ability to extended customization your view -->
+    <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+
+        <!-- Page wrapper -->
+        <div ng-include="'app/components/common/topnavbar.html'"></div>
+
+        <!-- Main view  -->
+        <div class="row wrapper border-bottom white-bg page-heading ng-scope">
+            <div class="col-lg-9">
+                <h2 style="display: inline-block;vertical-align: middle">
+                    <span ng-bind="pageTitle"></span>
+                    <span ng-bind="pageSubtitle"></span>
+                </h2>
+                <button
+                    type="button"
+                    name="button"
+                    id="btn-add"
+                    class="btn btn-primary btn-xs"
+                    style="margin: 10px 20px 0px;vertical-align: middle;"
+                    ng-if="showAddButton"
+                    ng-click="add()">
+                    Adicionar
+                </button>
+
+                <ol class="breadcrumb">
+                    <li>
+                        <a ui-sref="login">Início</a>
+                    </li>
+                    <li ng-repeat="bc in breadCrumb">
+                        <a ui-sref="{{ bc.state }}" ng-bind="bc.title"></a>
+                    </li>
+                </ol>
+                
+            </div>
+        </div>
+        <div ui-view="content"></div>
+
+        <!-- Footer -->
+        <div ng-include="'app/components/common/footer.html'"></div>
+
+    </div>
+    <!-- End page wrapper-->
+
+</div>
+<!-- End wrapper-->

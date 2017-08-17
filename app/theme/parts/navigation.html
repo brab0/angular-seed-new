@@ -1,0 +1,26 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+		<ul side-navigation class="nav metismenu" id="side-menu">
+			<li >
+				<img id="logo-text" src="/assets/images/logo-white.svg" style="width: 170px;margin: 30px auto 30px;display: block;">
+				<img id="logo-symbol" src="/assets/images/logo-symbol.svg" style="width: 40px;margin: 30px auto 30px;display: block;">
+			</li>
+			<li ui-sref-active="{active: item.sref}" ng-repeat="item in menu" ng-class="{'has-submenu' : item.child }">
+				<a ui-sref="{{item.sref}}">
+					<i class="fa {{item.class}}"></i> <span class="nav-label">{{item.label}}</span>
+					<span class="fa arrow" ng-if="item.child != undefined"></span>
+				</a>
+
+				<ul class="nav nav-second-level collapse" ng-if="item.child != undefined">
+					<li ui-sref-active="{active: subitem.sref}" ng-repeat="subitem in item.child">
+						<a ui-sref="{{subitem.sref}}"><i class="fa {{subitem.class}}"></i> <span class="nav-label">{{subitem.label}}</span> </a>
+					</li>
+				</ul>
+			</li>
+			<!--<li>
+				<img src="/assets/images/logo.png" style="width: 120px;margin: 40px auto 10px;display: block;">
+				<br/>
+			</li>-->
+		</ul>
+	</div>
+</nav>

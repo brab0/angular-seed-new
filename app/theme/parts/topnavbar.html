@@ -1,0 +1,18 @@
+<div class="row border-bottom">
+    <nav class="navbar" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <span minimaliza-sidebar></span>
+        </div>
+        <ul class="nav navbar-top-links navbar-right userMenuRight">
+            <span uib-dropdown on-toggle="toggled(open)" class="navbar-right">
+                <a class="dropdown-toggle"  uib-dropdown-toggle href>
+                    {{ user }} <b class="caret"></b>
+                </a>
+                <ul uib-dropdown-menu class="animated flipInX m-t-xs">
+                    <li><a ui-sref="app.account">Perfil</a></li>
+                    <li><a ui-sref="login" ng-click="logout()">Log out</a></li>
+                </ul>
+            </span>
+        </ul>
+    </nav>
+</div>
